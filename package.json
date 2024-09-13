@@ -1,0 +1,25 @@
+{
+  "name": "elektra-selenium-qa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./tests/*.spec.ts --no-timeouts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mocha": "^10.7.3",
+    "selenium-webdriver": "^4.24.0",
+    "webdriver-manager": "^12.1.9"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.8",
+    "@types/node": "^22.5.4",
+    "@types/selenium-webdriver": "^4.1.26",
+    "typescript": "^5.6.2"
+  }
+}

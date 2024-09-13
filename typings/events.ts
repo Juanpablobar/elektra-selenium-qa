@@ -1,0 +1,32 @@
+export namespace IEventEnhanced {
+  export enum Events {
+    virtual_page = 'virtual_page',
+    view_promotion = 'view_promotion',
+    select_promotion = 'select_promotion',
+    click_acceso_codigo = 'click_acceso_codigo',
+    click_acceso_email = 'click_acceso_email',
+    click_inicio_sesion = 'click_inicio_sesion',
+    click_menu_servicios = 'click_menu_servicios',
+    click_viajes = 'click_viajes',
+    click_codigo_postal_header = 'click_codigo_postal_header',
+    click_ubica_tienda = 'click_ubica_tienda',
+    click_prestamo_elektra = 'click_prestamo_elektra',
+    click_menu_element = 'click_menu_element',
+    view_item_list = 'view_item_list',
+    select_item = 'select_item',
+    view_item = 'view_item',
+    view_search_results = 'view_search_results',
+    add_to_cart = 'add_to_cart',
+    click_comprar = 'click_comprar',
+    remove_from_cart = 'remove_from_cart',
+    view_cart = 'view_cart',
+    click_ordenar = 'click_ordenar',
+    click_ver_mas = 'click_ver_mas',
+    click_breadcrumb = 'click_breadcrumb',
+    click_logo = 'click_logo',
+    view_category_list = 'view_category_list',
+    select_category = 'select_category',
+    click_footer_element = 'click_footer_element',
+    comparador_motos = 'comparador_motos'
+  }
+} 
