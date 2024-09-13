@@ -6,7 +6,10 @@ const { handleErrors } = require('../../utils/handleErrors.ts')
 const view_cart = async () => {
   it("view_cart", async () => {
 
+    await driver.findElement(By.css('body')).click()
     await driver.findElement(By.css('.vtex-minicart-2-x-minicartIconContainer')).click()
+    await driver.sleep(1000)
+    await driver.findElement(By.css('.vtex-minicart-2-x-closeIconButton')).click()
   
     await getEventFromDataLayer('view_cart')
     .then(events => handleErrors(events))
