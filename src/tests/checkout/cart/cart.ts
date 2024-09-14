@@ -1,9 +1,9 @@
-const { By } = require('selenium-webdriver')
-const { driver } = require('../../../utils/config')
-const { checkout_steps } = require('../../globals/checkout_steps')
-const { click_codigo_postal } = require('./click_codigo_postal')
+import { By } from 'selenium-webdriver'
+import { driver } from '../../../utils/config'
+import { checkout_steps } from '../../globals/checkout_steps'
+import { click_codigo_postal } from './click_codigo_postal'
 
-const cart = (goToNextStep = true) => {
+export const cart = (goToNextStep = true) => {
   describe('events to execute on cart', async () => {
 
     checkout_steps('begin_checkout')
@@ -11,5 +11,3 @@ const cart = (goToNextStep = true) => {
     goToNextStep && it('Click Continuar Compra', async () => await driver.findElement(By.css('.resume_continueButton__1CtpZ'))?.click())
   })
 }
-
-exports.cart = cart

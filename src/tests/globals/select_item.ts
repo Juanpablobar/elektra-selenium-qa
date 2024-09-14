@@ -1,9 +1,9 @@
-const { By } = require('selenium-webdriver')
-const { driver } = require('../../utils/config')
-const { getEventFromDataLayer } = require('../../utils/getDatalayer')
-const { handleErrors } = require('../../utils/handleErrors')
+import { By } from 'selenium-webdriver'
+import { driver } from '../../utils/config'
+import { getEventFromDataLayer } from '../../utils/getDatalayer'
+import { handleErrors } from '../../utils/handleErrors'
 
-const select_item = async (shelf) => {
+export const select_item = async (shelf) => {
 
     await driver.actions()
       .scroll(0, 0, 0, 0, shelf)
@@ -16,5 +16,3 @@ const select_item = async (shelf) => {
     .then(events => handleErrors(events))
     
 }
-
-exports.select_item = select_item

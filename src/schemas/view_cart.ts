@@ -1,4 +1,4 @@
-const view_cart_schema = () => {
+export const view_cart_schema = () => {
   return {
     event: {
       type: 'string',
@@ -7,7 +7,4 @@ const view_cart_schema = () => {
       required: true
     },
   }
-
 }
-
-exports.view_cart_schema = view_cart_schema

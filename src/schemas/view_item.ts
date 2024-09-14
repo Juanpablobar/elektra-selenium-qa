@@ -1,4 +1,4 @@
-const view_item_schema = () => {
+export const view_item_schema = () => {
   return {
     event: {
       type: 'string',
@@ -7,7 +7,4 @@ const view_item_schema = () => {
       required: true
     },
   }
-
 }
-
-exports.view_item_schema = view_item_schema

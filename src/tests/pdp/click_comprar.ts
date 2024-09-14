@@ -1,9 +1,9 @@
-const { By } = require('selenium-webdriver')
-const { driver } = require('../../utils/config')
-const { getEventFromDataLayer } = require('../../utils/getDatalayer')
-const { handleErrors } = require('../../utils/handleErrors')
+import { By } from 'selenium-webdriver'
+import { driver } from '../../utils/config'
+import { getEventFromDataLayer } from '../../utils/getDatalayer'
+import { handleErrors } from '../../utils/handleErrors'
 
-const click_comprar = async () => {
+export const click_comprar = async () => {
   it("click_comprar", async () => {
 
     await driver.findElement(By.css('.buttonCustomM')).click()
@@ -13,5 +13,3 @@ const click_comprar = async () => {
 
   })
 }
-
-exports.click_comprar = click_comprar

@@ -1,10 +1,10 @@
-const { driver, setUrl } = require('../../utils/config')
-const { view_cart } = require('./../globals/view_cart')
-const { select_item_HOME } = require('./select_item')
+import { setUrl } from '../../utils/config'
+import { view_cart } from './../globals/view_cart'
+import { select_item_HOME } from './select_item'
 
 const workspace = process.env.WORKSPACE || ''
 
-const home = () => {
+export const home = () => {
   describe('events to execute on home', async () => {
 
     it('home', async () => await setUrl(workspace))
@@ -13,5 +13,3 @@ const home = () => {
     select_item_HOME()
   })
 }
-
-exports.home = home

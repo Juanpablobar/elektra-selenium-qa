@@ -1,9 +1,9 @@
-const { By } = require('selenium-webdriver')
-const { driver } = require('../../utils/config')
-const { getEventFromDataLayer } = require('../../utils/getDatalayer')
-const { handleErrors } = require('../../utils/handleErrors')
+import { By } from 'selenium-webdriver'
+import { driver } from '../../utils/config'
+import { getEventFromDataLayer } from '../../utils/getDatalayer'
+import { handleErrors } from '../../utils/handleErrors'
 
-const select_item_PLP = async () => {
+export const select_item_PLP = async () => {
   it("select_item", async () => {
 
     await driver.findElement(By.css('.vtex-search-result-3-x-searchResultContainer .vtex-product-summary-2-x-clearLink')).click()
@@ -13,5 +13,3 @@ const select_item_PLP = async () => {
 
   })
 }
-
-exports.select_item_PLP = select_item_PLP

@@ -1,11 +1,11 @@
-const { By } = require('selenium-webdriver')
-const { driver } = require('../../../utils/config')
-const { getEventFromDataLayer } = require('../../../utils/getDatalayer')
-const { handleErrors } = require('../../../utils/handleErrors')
+import { By } from 'selenium-webdriver'
+import { driver } from '../../../utils/config'
+import { getEventFromDataLayer } from '../../../utils/getDatalayer'
+import { handleErrors } from '../../../utils/handleErrors'
 
 const cp = process.env.CP
 
-const click_codigo_postal = async () => {
+export const click_codigo_postal = async () => {
   it("click_codigo_postal", async () => {
 
     const codigoPostal = await driver.findElement(By.css('#newPostalCode'))
@@ -16,5 +16,3 @@ const click_codigo_postal = async () => {
     .then(events => handleErrors(events))
   })
 }
-
-exports.click_codigo_postal = click_codigo_postal

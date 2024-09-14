@@ -1,8 +1,8 @@
-const { By } = require('selenium-webdriver')
-const { driver } = require('../../../utils/config')
-const { checkout_steps } = require('../../globals/checkout_steps')
+import { By } from 'selenium-webdriver'
+import { driver } from '../../../utils/config'
+import { checkout_steps } from '../../globals/checkout_steps'
 
-const shipping = () => {
+export const shipping = () => {
   describe('events to execute on shipping', async () => {
 
     checkout_steps('add_shipping_info')
@@ -16,5 +16,3 @@ const shipping = () => {
     })
   })
 }
-
-exports.shipping = shipping

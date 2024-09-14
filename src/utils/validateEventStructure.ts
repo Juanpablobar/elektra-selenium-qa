@@ -1,6 +1,6 @@
-const { Schemas } = require('../schemas/schemas')
+import { Schemas } from '../schemas/schemas'
 
-const validateEventStructure = (event) => {
+export const validateEventStructure = (event) => {
 
   const eventName = event?.[0]?.event
   const receivedEvent = event?.[0]
@@ -49,7 +49,4 @@ const validateEventStructure = (event) => {
     isCorrect: true,
     messages: ''
   }
-
 }
-
-exports.validateEventStructure = validateEventStructure

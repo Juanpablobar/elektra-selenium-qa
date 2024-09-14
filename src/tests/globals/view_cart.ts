@@ -1,9 +1,9 @@
-const { By } = require('selenium-webdriver')
-const { driver } = require('../../utils/config')
-const { getEventFromDataLayer } = require('../../utils/getDatalayer')
-const { handleErrors } = require('../../utils/handleErrors')
+import { By } from 'selenium-webdriver'
+import { driver } from '../../utils/config'
+import { getEventFromDataLayer } from '../../utils/getDatalayer'
+import { handleErrors } from '../../utils/handleErrors'
 
-const view_cart = async (goToCheckout = false) => {
+export const view_cart = async (goToCheckout = false) => {
   it("view_cart", async () => {
 
     await driver.findElement(By.css('body')).click()
@@ -19,5 +19,3 @@ const view_cart = async (goToCheckout = false) => {
     })
   })
 }
-
-exports.view_cart = view_cart

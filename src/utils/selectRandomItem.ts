@@ -1,8 +1,8 @@
-const selectRandomItem = (numberOfElements) => {
+export const selectRandomItem = (numberOfElements) => {
   return Math.trunc(Math.random() * (numberOfElements - 0));
 }
 
-const selectRandomItemVisible = async (elements) => {
+export const selectRandomItemVisible = async (elements) => {
   let isVisible = false
   let visibleItem = {}
   while(!isVisible){
@@ -13,6 +13,3 @@ const selectRandomItemVisible = async (elements) => {
 
   return visibleItem
 }
-
-exports.selectRandomItem = selectRandomItem
-exports.selectRandomItemVisible = selectRandomItemVisible

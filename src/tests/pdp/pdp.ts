@@ -1,10 +1,9 @@
-const { setUrl } = require('../../utils/config')
-const { view_item } = require('./view_item')
-const { add_to_cart_PDP } = require('./add_to_cart')
-const { view_cart } = require('./../globals/view_cart')
-const { click_comprar } = require('./click_comprar')
+import { setUrl } from '../../utils/config'
+import { view_item } from './view_item'
+import { add_to_cart_PDP } from './add_to_cart'
+import { view_cart } from './../globals/view_cart'
 
-const pdp = (url) => {
+export const pdp = (url) => {
   describe('events to execute on pdp', async () => {
 
     url && it('PDP', async () => await setUrl(url))
@@ -12,8 +11,5 @@ const pdp = (url) => {
     view_item()
     add_to_cart_PDP()
     view_cart(true)
-  
   })
 }
-
-exports.pdp = pdp

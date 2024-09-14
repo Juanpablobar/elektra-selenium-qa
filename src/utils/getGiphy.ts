@@ -1,8 +1,8 @@
-const addContext = require('mochawesome/addContext');
+import addContext from 'mochawesome/addContext';
 
-const { selectRandomItem } = require('./selectRandomItem')
+import { selectRandomItem } from './selectRandomItem'
 
-const getGifs = async () => {
+export const getGifs = async () => {
     const listOfGoodQuerys = ['dev', 'champions', 'yeah', 'congrats', 'nice', 'puppies', 'party']
     const listOfBadQuerys = ['sorry', 'better luck', 'not good', 'disappointment', 'sad', 'disaster']
     const selectList = listOfGoodQuerys
@@ -18,5 +18,3 @@ const getGifs = async () => {
       addContext(this, cleanUrl)
     }) )
 }
-
-exports.getGifs = getGifs

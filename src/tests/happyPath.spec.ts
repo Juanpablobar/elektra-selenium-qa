@@ -1,22 +1,21 @@
-const { driver } = require('../utils/config')
-const { home } = require('./home/home')
-const { pdp } = require('./pdp/pdp')
-const { cart } = require('./checkout/cart/cart')
-const { email } = require('./checkout/email/email')
-const { shipping } = require('./checkout/shipping/shipping')
-const { payment } = require('./checkout/payment/payment')
-const { orderplaced } = require('./checkout/orderplaced/orderplaced')
-const { getGifs } = require('../utils/getGiphy')
+import { home } from './home/home'
+import { pdp } from './pdp/pdp'
+import { cart } from './checkout/cart/cart'
+import { email } from './checkout/email/email'
+import { shipping } from './checkout/shipping/shipping'
+import { payment } from './checkout/payment/payment'
+import { orderplaced } from './checkout/orderplaced/orderplaced'
+import { getGifs } from '../utils/getGiphy'
 
 const executeHappyPath = async () => {
   home()
   pdp()
-  // cart()
-  // email()
-  // shipping()
-  // payment(false)
-  // orderplaced()
-  // getGifs()
+  cart()
+  email()
+  shipping()
+  payment(false)
+  orderplaced()
+  getGifs()
 }
 
 executeHappyPath()

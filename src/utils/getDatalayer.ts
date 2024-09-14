@@ -1,16 +1,16 @@
-const { logging } = require('selenium-webdriver')
-const addContext = require('mochawesome/addContext');
+import { logging } from 'selenium-webdriver'
+import addContext from 'mochawesome/addContext';
 
-const { driver } = require('./config')
+import { driver } from './config'
 
 const timeOutBetweenFectchs = process.env.TIMEOUTBETWEENFETCHS
 
-const printDataLayer = async () => {
+export const printDataLayer = async () => {
   await driver.sleep(timeOutBetweenFectchs)
   await driver.executeScript(`console.log('selenium-datalayer', JSON.stringify(window?.dataLayer?.filter(item => !item?.event?.includes('gtm'))))`);
 }
 
-const getDataLayer = async () => {
+export const getDataLayer = async () => {
   await printDataLayer()
   return await driver
   .manage()
@@ -23,7 +23,7 @@ const getDataLayer = async () => {
   });
 }
 
-const getEventFromDataLayer = async (event, onlyLast = true) => {
+export const getEventFromDataLayer = async (event, onlyLast = true) => {
   return await getDataLayer()
     .then(async datalayer => {
       let filterEvents = datalayer?.filter(item => item?.event === event)
@@ -39,7 +39,3 @@ const getEventFromDataLayer = async (event, onlyLast = true) => {
       return filterEvents
     })
 }
-
-exports.printDataLayer = printDataLayer
-exports.getDataLayer = getDataLayer
-exports.getEventFromDataLayer = getEventFromDataLayer

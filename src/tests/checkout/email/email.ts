@@ -1,10 +1,10 @@
-const { By } = require('selenium-webdriver')
-const { driver } = require('../../../utils/config')
-const { checkout_steps } = require('../../globals/checkout_steps')
+import { By } from 'selenium-webdriver'
+import { driver } from '../../../utils/config'
+import { checkout_steps } from '../../globals/checkout_steps'
 
 const emailUser = process.env.EMAIL
 
-const email = () => {
+export const email = () => {
   describe('events to execute on email', async () => {
 
     checkout_steps('add_email_info')
@@ -17,5 +17,3 @@ const email = () => {
     })
   })
 }
-
-exports.email = email
