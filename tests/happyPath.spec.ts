@@ -6,6 +6,7 @@ const { email } = require('./checkout/email/email.ts')
 const { shipping } = require('./checkout/shipping/shipping.ts')
 const { payment } = require('./checkout/payment/payment.ts')
 const { orderplaced } = require('./checkout/orderplaced/orderplaced.ts')
+const { getGifs } = require('../utils/getGiphy.ts')
 
 const executeHappyPath = async () => {
   home()
@@ -14,7 +15,8 @@ const executeHappyPath = async () => {
   email()
   shipping()
   payment(false)
-  orderplaced().then(() => driver.quit())
+  orderplaced()
+  getGifs()
 }
 
 executeHappyPath()
