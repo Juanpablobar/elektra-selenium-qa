@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests/*.spec.ts --no-timeouts --parallel --reporter mochawesome --require mochawesome/register --reporter-options charts,autoOpen,overwrite=false,o=reports,f=[status]_[datetime]-[name]-report,ts"
+    "test": "mocha ./build/tests/*.spec.js --no-timeouts --parallel --reporter mochawesome --require mochawesome/register --reporter-options charts,autoOpen,overwrite=false,o=reports,f=[status]_[datetime]-[name]-report,ts",
+    "build": "tsc --w"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
-  "type": "module",
   "dependencies": {
     "dotenv": "^16.4.5",
     "mocha": "^10.7.3",
