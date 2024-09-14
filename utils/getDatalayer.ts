@@ -1,4 +1,6 @@
 const { logging } = require('selenium-webdriver')
+const addContext = require('mochawesome/addContext');
+
 const { driver } = require('./config.ts')
 
 const timeOutBetweenFectchs = process.env.TIMEOUTBETWEENFETCHS
@@ -21,10 +23,18 @@ const getDataLayer = async () => {
   });
 }
 
-const getEventFromDataLayer = async (event) => {
+const getEventFromDataLayer = async (event, onlyLast = true) => {
   return await getDataLayer()
     .then(async datalayer => {
-      const filterEvents = datalayer?.filter(item => item?.event === event)
+      let filterEvents = datalayer?.filter(item => item?.event === event)
+      if(onlyLast && filterEvents?.length > 1){
+        const getLatestId = Math.max(...filterEvents?.map(item => item?.['gtm.uniqueEventId']))
+        const findLatestEvent = filterEvents?.find(item => item?.['gtm.uniqueEventId'] === getLatestId)
+        filterEvents = findLatestEvent
+      }
+      afterEach(function () {
+        addContext(this, JSON.stringify(filterEvents));
+      });
       console.log(filterEvents)
       return filterEvents
     })

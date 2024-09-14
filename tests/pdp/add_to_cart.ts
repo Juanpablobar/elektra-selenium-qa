@@ -1,4 +1,5 @@
 const { By } = require('selenium-webdriver')
+
 const { driver } = require('../../utils/config.ts')
 const { getEventFromDataLayer } = require('../../utils/getDatalayer.ts')
 const { handleErrors } = require('../../utils/handleErrors.ts')
