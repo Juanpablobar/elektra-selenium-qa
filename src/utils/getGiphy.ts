@@ -10,9 +10,9 @@ export const getGifs = async () => {
     const url = `https://api.giphy.com/v1/gifs/search?api_key=rydo4KhECgSC8DpckAnecv1okNNC2kGZ&q=${selectQuery}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`
     const resp = await fetch(url)
     const {data} = await resp.json()
-    const getRandomElement = data[selectRandomItem(data?.length)]
-    const getUrl = getRandomElement?.images?.original?.url
-    const cleanUrl = getUrl?.split('giphy.gif')[0].concat('giphy.gif')
+    const getRandomElement = await data[selectRandomItem(data?.length)]
+    const getUrl = await getRandomElement?.images?.original?.url
+    const cleanUrl = await getUrl?.split('giphy.gif')[0].concat('giphy.gif')
 
     describe(`Don't be shy! Click Me!`, () => it("😎", function () { 
       addContext(this, cleanUrl)

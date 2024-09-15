@@ -6,7 +6,7 @@ export const validateEventStructure = (event: IEventEnhanced.MapEvents | any) =>
   const eventName: IEventEnhanced.Events = event?.[0]?.event
   const receivedEvent = event?.[0]
   
-  //TODO: Tipado de Schemas
+  //TODO: Tipado de Schemas y de todo este archivo, mejorar forma de exportar isCorrect y message
   const eventsSchemas: any = new Schemas()
   const getSchemaForThisEvent = eventsSchemas?.[eventName]
 

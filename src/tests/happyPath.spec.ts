@@ -8,14 +8,16 @@ import { orderplaced } from './checkout/orderplaced'
 import { getGifs } from '#utils/getGiphy'
 
 const executeHappyPath = async () => {
-  home()
-  pdp()
-  cart()
-  email()
-  shipping()
-  payment(false)
-  orderplaced()
-  getGifs()
+  describe(`Happy Path - ${Date()}`, () => {
+    home()
+    pdp()
+    cart()
+    email()
+    shipping()
+    payment(false)
+    orderplaced()
+    getGifs()
+  })
 }
 
 executeHappyPath()
