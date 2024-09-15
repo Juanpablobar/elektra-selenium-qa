@@ -1,4 +1,4 @@
-import { Schemas } from '../schemas/schemas'
+import { Schemas } from '#schemas/schemas'
 
 export const validateEventStructure = (event) => {
 

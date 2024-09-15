@@ -1,4 +1,3 @@
-import { driver } from './config'
 import { validateEventStructure } from './validateEventStructure'
 
 export const handleErrors = async (events) => {

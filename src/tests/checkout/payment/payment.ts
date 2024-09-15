@@ -1,6 +1,6 @@
 import { By } from 'selenium-webdriver'
-import { driver } from '../../../utils/config'
-import { checkout_steps } from '../../globals/checkout_steps'
+import { driver } from '#utils/config'
+import { checkout_steps } from '#globals/checkout_steps'
 
 export const payment = (finalizePurchase = false) => {
   describe('events to execute on payment', async () => {

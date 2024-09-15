@@ -1,5 +1,5 @@
-import { driver } from '../../../utils/config'
-import { checkout_steps } from '../../globals/checkout_steps'
+import { driver } from '#utils/config'
+import { checkout_steps } from '#globals/checkout_steps'
 
 export const orderplaced = () => {
   describe('events to execute on orderplaced', () => {

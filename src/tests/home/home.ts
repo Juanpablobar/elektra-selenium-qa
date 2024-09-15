@@ -1,5 +1,5 @@
-import { setUrl } from '../../utils/config'
-import { view_cart } from './../globals/view_cart'
+import { setUrl } from '#utils/config'
+import { view_cart } from '#globals/view_cart'
 import { select_item_HOME } from './select_item'
 
 const workspace = process.env.WORKSPACE || ''

@@ -1,7 +1,7 @@
 import { By } from 'selenium-webdriver'
-import { driver } from '../../../utils/config'
-import { getEventFromDataLayer } from '../../../utils/getDatalayer'
-import { handleErrors } from '../../../utils/handleErrors'
+import { driver } from '#utils/config'
+import { getEventFromDataLayer } from '#utils/getDatalayer'
+import { handleErrors } from '#utils/handleErrors'
 
 const cp = process.env.CP
 

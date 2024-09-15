@@ -1,5 +1,5 @@
 require('dotenv').config()
-import { Builder, Browser, By } from 'selenium-webdriver'
+import { Builder, Browser } from 'selenium-webdriver'
 import chrome from 'selenium-webdriver/chrome'
 
 const workspaceEnv = process.env.WORKSPACE || ''

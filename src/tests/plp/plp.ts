@@ -1,7 +1,7 @@
-import { setUrl } from '../../utils/config'
-import { view_item_list } from './../plp/view_item_list'
-import { select_item_PLP } from './../plp/select_item'
-import { view_cart } from './../globals/view_cart'
+import { setUrl } from '#utils/config'
+import { view_item_list } from './view_item_list'
+import { select_item_PLP } from './select_item'
+import { view_cart } from '#globals/view_cart'
 
 const workspace = process.env.WORKSPACE || ''
 const plpUrl = process.env.PLP || ''

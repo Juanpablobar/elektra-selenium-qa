@@ -1,7 +1,7 @@
 import { By } from 'selenium-webdriver'
-import { driver } from '../../utils/config'
-import { getEventFromDataLayer } from '../../utils/getDatalayer'
-import { handleErrors } from '../../utils/handleErrors'
+import { driver } from '#utils/config'
+import { getEventFromDataLayer } from '#utils/getDatalayer'
+import { handleErrors } from '#utils/handleErrors'
 
 export const select_item = async (shelf) => {
 

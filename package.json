@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./build/tests/*.spec.js --no-timeouts --parallel --reporter mochawesome --require mochawesome/register --reporter-options charts,autoOpen,overwrite=false,o=reports,f=[status]_[datetime]-[name]-report,ts",
-    "build": "tsc --w"
+    "build": "tsc --w",
+    "test": "mocha ./build/tests/*.spec.js --no-timeouts --parallel --reporter mochawesome --require mochawesome/register --reporter-options charts,autoOpen,overwrite=false,o=reports,f=[status]_[datetime]-[name]-report,ts"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +23,12 @@
     "@types/node": "^22.5.4",
     "@types/selenium-webdriver": "^4.1.26",
     "typescript": "^5.6.2"
-  }
+  },
+  "imports": {
+    "#utils/*": "./build/utils/*.js",
+    "#schemas/*": "./build/schemas/*.js",
+    "#tests/*": "./build/tests/*.js",
+    "#typings/*": "./build/typings/*.js",
+    "#globals/*": "./build/tests/globals/*.js"
+    }
 }

@@ -1,5 +1,5 @@
-import { getEventFromDataLayer } from '../../utils/getDatalayer'
-import { handleErrors } from '../../utils/handleErrors'
+import { getEventFromDataLayer } from '#utils/getDatalayer'
+import { handleErrors } from '#utils/handleErrors'
 
 export const checkout_steps = async (step, onlyLastEvent) => {
   it(step, async () => {

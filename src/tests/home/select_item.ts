@@ -1,7 +1,7 @@
 import { By } from 'selenium-webdriver'
-import { driver } from '../../utils/config'
-import { selectRandomItemVisible } from '../../utils/selectRandomItem'
-import { select_item } from '../globals/select_item'
+import { driver } from '#utils/config'
+import { selectRandomItemVisible } from '#utils/selectRandomItem'
+import { select_item } from '#globals/select_item'
 
 export const select_item_HOME = async () => {
   it("select_item", async () => {

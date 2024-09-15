@@ -1,8 +1,8 @@
 import { By } from 'selenium-webdriver'
 
-import { driver } from '../../utils/config'
-import { getEventFromDataLayer } from '../../utils/getDatalayer'
-import { handleErrors } from '../../utils/handleErrors'
+import { driver } from '#utils/config'
+import { getEventFromDataLayer } from '#utils/getDatalayer'
+import { handleErrors } from '#utils/handleErrors'
 
 export const add_to_cart_PDP = async () => {
   it("add_to_cart", async () => {

@@ -1,6 +1,6 @@
 import { By } from 'selenium-webdriver'
-import { driver } from '../../../utils/config'
-import { checkout_steps } from '../../globals/checkout_steps'
+import { driver } from '#utils/config'
+import { checkout_steps } from '#globals/checkout_steps'
 
 export const shipping = () => {
   describe('events to execute on shipping', async () => {

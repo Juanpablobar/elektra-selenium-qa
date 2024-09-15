@@ -1,6 +1,6 @@
 import { By } from 'selenium-webdriver'
-import { driver } from '../../../utils/config'
-import { checkout_steps } from '../../globals/checkout_steps'
+import { driver } from '#utils/config'
+import { checkout_steps } from '#globals/checkout_steps'
 import { click_codigo_postal } from './click_codigo_postal'
 
 export const cart = (goToNextStep = true) => {
