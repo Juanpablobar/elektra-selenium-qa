@@ -1,13 +1,14 @@
 import { By } from 'selenium-webdriver'
 import { driver } from '#utils/config'
 import { checkout_steps } from '#globals/checkout_steps'
+import { IEventEnhanced } from '#typings/events'
 
 const emailUser = process.env.EMAIL
 
 export const email = () => {
   describe('events to execute on email', async () => {
 
-    checkout_steps('add_email_info')
+    checkout_steps(IEventEnhanced.CheckoutEvents.add_email_info)
     it("Rellenar datos de perfil", async () => {
 
       const emailInput = await driver.findElement(By.css('#email-display'))

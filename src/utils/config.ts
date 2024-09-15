@@ -2,17 +2,18 @@ require('dotenv').config()
 import { Builder, Browser } from 'selenium-webdriver'
 import chrome from 'selenium-webdriver/chrome'
 
-const workspaceEnv = process.env.WORKSPACE || ''
-const vtexIdclientAutCookie = process.env.VTEXIDCLIENTAUTCOOKIE
+const workspaceEnv: string = process.env.WORKSPACE || ''
+const vtexIdclientAutCookie: string = process.env.VTEXIDCLIENTAUTCOOKIE || ''
 
 //Configuracion de navegador
 const options = new chrome.Options()
 options.addArguments("--start-maximized"); 
-options.addExtensions(['./extensions/analytics-debugger.crx'])
+options.addExtensions('./extensions/analytics-debugger.crx')
 
 export const driver = new Builder()
     .forBrowser(Browser.CHROME)
     .setChromeOptions(options)
+    //@ts-ignore
     .setCapability('goog:loggingPrefs', { 'browser':'ALL' })
     .build()
 

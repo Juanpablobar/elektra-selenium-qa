@@ -1,11 +1,12 @@
 import { By } from 'selenium-webdriver'
 import { driver } from '#utils/config'
 import { checkout_steps } from '#globals/checkout_steps'
+import { IEventEnhanced } from '#typings/events'
 
 export const payment = (finalizePurchase = false) => {
   describe('events to execute on payment', async () => {
 
-    checkout_steps('add_payment_info')
+    checkout_steps(IEventEnhanced.CheckoutEvents.add_payment_info)
     it("Click para seleccionar método de pago", async () => {
 
       const paymentMethods = await driver.findElements(By.css('.PaymentMethods_method__3PcCF'))

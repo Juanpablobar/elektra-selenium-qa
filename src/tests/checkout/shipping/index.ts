@@ -1,11 +1,12 @@
 import { By } from 'selenium-webdriver'
 import { driver } from '#utils/config'
 import { checkout_steps } from '#globals/checkout_steps'
+import { IEventEnhanced } from '#typings/events'
 
 export const shipping = () => {
   describe('events to execute on shipping', async () => {
 
-    checkout_steps('add_shipping_info')
+    checkout_steps(IEventEnhanced.CheckoutEvents.add_shipping_info)
     it("Click para continuar hacia Payment", async () => {
 
       await driver.sleep(4000)

@@ -1,10 +1,13 @@
-import { Schemas } from '#schemas/schemas'
+import { Schemas } from '#schemas/index'
+import { IEventEnhanced } from '#typings/events'
 
-export const validateEventStructure = (event) => {
+export const validateEventStructure = (event: IEventEnhanced.MapEvents | any) => {
 
-  const eventName = event?.[0]?.event
+  const eventName: IEventEnhanced.Events = event?.[0]?.event
   const receivedEvent = event?.[0]
-  const eventsSchemas = new Schemas()
+  
+  //TODO: Tipado de Schemas
+  const eventsSchemas: any = new Schemas()
   const getSchemaForThisEvent = eventsSchemas?.[eventName]
 
   if(!getSchemaForThisEvent) return {
