@@ -9,7 +9,7 @@ export const view_cart_schema: View_cart_schema = () => {
     event: {
       type: "string",
       values: ["view_cart"],
-      shouldNo: [0, false, true, null],
+      shouldNo: [0, false, true],
       required: true,
     },
     total_quantity_cart: {

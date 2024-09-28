@@ -25,7 +25,7 @@ export const getDataLayer = async () => {
   });
 }
 
-export const getEventFromDataLayer = async (event: IEventEnhanced.Events | IEventEnhanced.CheckoutEvents, onlyLast: boolean = true) => {
+export const getEventFromDataLayer = async (event: IEventEnhanced.Events, onlyLast: boolean = true) => {
   return await getDataLayer()
     .then(async datalayer => {
       let filterEvents = datalayer?.filter((item: any) => item?.event === event)

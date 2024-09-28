@@ -7,7 +7,7 @@ import { IEventEnhanced } from '#typings/events'
 export const cart = (goToNextStep = true) => {
   describe('events to execute on cart', async () => {
 
-    checkout_steps(IEventEnhanced.CheckoutEvents.begin_checkout)
+    checkout_steps(IEventEnhanced.Events.begin_checkout)
     click_codigo_postal()
     goToNextStep && it('Click Continuar Compra', async () => await driver.findElement(By.css('.resume_continueButton__1CtpZ'))?.click())
   })

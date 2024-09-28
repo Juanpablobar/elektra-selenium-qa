@@ -13,7 +13,7 @@ export const click_codigo_postal = async () => {
     codigoPostal?.click()
     codigoPostal?.sendKeys(cp)
 
-    await getEventFromDataLayer(IEventEnhanced.CheckoutEvents.click_codigo_postal)
+    await getEventFromDataLayer(IEventEnhanced.Events.click_codigo_postal)
     .then(events => handleErrors(events))
   })
 }

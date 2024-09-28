@@ -6,7 +6,7 @@ import { IEventEnhanced } from '#typings/events'
 export const payment = (finalizePurchase = false) => {
   describe('events to execute on payment', async () => {
 
-    checkout_steps(IEventEnhanced.CheckoutEvents.add_payment_info)
+    checkout_steps(IEventEnhanced.Events.add_payment_info)
     it("Click para seleccionar método de pago", async () => {
 
       const paymentMethods = await driver.findElements(By.css('.PaymentMethods_method__3PcCF'))

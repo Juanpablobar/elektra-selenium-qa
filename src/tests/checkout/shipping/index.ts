@@ -6,7 +6,7 @@ import { IEventEnhanced } from '#typings/events'
 export const shipping = () => {
   describe('events to execute on shipping', async () => {
 
-    checkout_steps(IEventEnhanced.CheckoutEvents.add_shipping_info)
+    checkout_steps(IEventEnhanced.Events.add_shipping_info)
     it("Click para continuar hacia Payment", async () => {
 
       await driver.sleep(4000)
