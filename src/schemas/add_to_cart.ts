@@ -2,14 +2,14 @@ import { IEventEnhanced } from "#typings/events";
 import { createSchema } from "./help";
 import { items_schema } from "./items";
 
-type View_cart_schema =
-  () => IEventEnhanced.MapEvents[IEventEnhanced.Events.view_cart];
+type Add_to_cart_schema =
+  () => IEventEnhanced.MapEvents[IEventEnhanced.Events.add_to_cart];
 
-export const view_cart_schema: View_cart_schema = () => {
-  return createSchema<IEventEnhanced.Events.view_cart>({
+export const add_to_cart_schema: Add_to_cart_schema = () => {
+  return createSchema<IEventEnhanced.Events.add_to_cart>({
     event: {
       type: "string",
-      values: ["view_cart"],
+      values: ["add_to_cart"],
       shouldNo: [0, false, true],
       required: true,
     },
@@ -32,17 +32,7 @@ export const view_cart_schema: View_cart_schema = () => {
       required: true,
     },
     ecommerce: {
-      items: [
-        items_schema({
-          deleteProperties: [
-            "cotizador_prestamo",
-            "item_list_id",
-            "disponibilidad_en_tienda",
-            "disponibilidad_de_envio",
-            "disponibilidad_de_inventario",
-          ],
-        }),
-      ],
+      items: [items_schema()],
     },
   });
 };

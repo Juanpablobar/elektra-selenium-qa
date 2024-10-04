@@ -1,40 +1,39 @@
 type Primitive = string | number | boolean | null | undefined;
 export namespace IEventEnhanced {
   interface SchemaField<T extends Primitive> {
-    type: 'string' | 'number' | 'boolean';
+    type: "string" | "number" | "boolean";
     values: T[];
     shouldNo: Exclude<Primitive, T>[];
     required: boolean;
   }
   export enum Events {
     view_cart = "view_cart",
-    // virtual_page = 'virtual_page',
-    // view_promotion = 'view_promotion',
-    // select_promotion = 'select_promotion',
-    // click_acceso_codigo = 'click_acceso_codigo',
-    // click_acceso_email = 'click_acceso_email',
-    // click_inicio_sesion = 'click_inicio_sesion',
-    // click_menu_servicios = 'click_menu_servicios',
-    // click_viajes = 'click_viajes',
-    // click_codigo_postal_header = 'click_codigo_postal_header',
-    // click_ubica_tienda = 'click_ubica_tienda',
-    // click_prestamo_elektra = 'click_prestamo_elektra',
-    // click_menu_element = 'click_menu_element',
-    view_item_list = 'view_item_list',
-    select_item = 'select_item',
-    view_item = 'view_item',
-    // view_search_results = 'view_search_results',
-    add_to_cart = 'add_to_cart',
-    click_comprar = 'click_comprar',
-    // remove_from_cart = 'remove_from_cart',
-    // click_ordenar = 'click_ordenar',
-    // click_ver_mas = 'click_ver_mas',
-    // click_breadcrumb = 'click_breadcrumb',
-    // click_logo = 'click_logo',
+    view_item_list = "view_item_list",
+    select_item = "select_item",
+    view_item = "view_item",
+    add_to_cart = "add_to_cart",
+    virtual_page = 'virtual_page',
+    view_promotion = 'view_promotion',
+    select_promotion = 'select_promotion',
+    click_acceso_codigo = 'click_acceso_codigo',
+    click_acceso_email = 'click_acceso_email',
+    click_inicio_sesion = 'click_inicio_sesion',
+    click_menu_servicios = 'click_menu_servicios',
+    click_viajes = 'click_viajes',
+    click_codigo_postal_header = 'click_codigo_postal_header',
+    click_ubica_tienda = 'click_ubica_tienda',
+    click_prestamo_elektra = 'click_prestamo_elektra',
+    click_menu_element = 'click_menu_element',
+    view_search_results = 'view_search_results',
+    click_comprar = "click_comprar",
+    remove_from_cart = 'remove_from_cart',
+    click_ordenar = 'click_ordenar',
+    click_ver_mas = 'click_ver_mas',
+    click_breadcrumb = 'click_breadcrumb',
+    click_logo = 'click_logo',
     // view_category_list = 'view_category_list',
     // select_category = 'select_category',
     // click_footer_element = 'click_footer_element',
-    // comparador_motos = 'comparador_motos',
 
     begin_checkout = "begin_checkout",
     add_email_info = "add_email_info",
@@ -62,196 +61,201 @@ export namespace IEventEnhanced {
         >[];
       };
     };
-    // [Events.virtual_page]: {
-    //   event: SchemaField<Events.virtual_page>;
-    //   page_type: SchemaField<string>;
-    // },
-    // [Events.view_promotion]: {
-    //   event: SchemaField<Events.view_promotion>;
-    //   ecommerce: {
-    //     items: ItemPromotion[];
-    //   };
-    // },
-    // [Events.select_promotion]: {
-    //   event: SchemaField<Events.select_promotion>;
-    //   ecommerce: {
-    //     items: ItemPromotion[];
-    //   };
-    // },
-    // [Events.click_acceso_codigo]: {
-    //   event: SchemaField<Events.click_acceso_codigo>;
-    //   page_type: SchemaField<string>;
-    // },
-    // [Events.click_acceso_email]: {
-    //   event: SchemaField<Events.click_acceso_email>;
-    //   page_type: SchemaField<string>;
-    // },
-    // [Events.click_inicio_sesion]: {
-    //   event: SchemaField<Events.click_inicio_sesion>;
-    //   page_type: SchemaField<string>;
-    // },
-    // [Events.click_menu_servicios]: {
-    //   event: SchemaField<Events.click_menu_servicios>;
-    //   opcion_seleccionada: SchemaField<string>;
-    //   page_type: SchemaField<string>;
-    // },
-    // [Events.click_viajes]: {
-    //   event: SchemaField<Events.click_viajes>;
-    //   page_type: SchemaField<string>;
-    // },
-    // [Events.click_codigo_postal_header]: {
-    //   event: SchemaField<Events.click_codigo_postal_header>;
-    //   value_cp: SchemaField<number>;
-    //   page_type: SchemaField<string>;
-    // },
-    // [Events.click_ubica_tienda]: {
-    //   event: SchemaField<Events.click_ubica_tienda>;
-    //   page_type: SchemaField<string>;
-    // },
-    // [Events.click_prestamo_elektra]: {
-    //   event: SchemaField<Events.click_prestamo_elektra>;
-    //   opcion_seleccionada: SchemaField<string>;
-    //   page_type: SchemaField<string>;
-    // },
     [Events.view_item_list]: {
-      event: SchemaField<Events.view_item_list>;
+      event: SchemaField<string>;
       page_type: SchemaField<string>;
       ecommerce: {
         items: Omit<
           ItemsProduct,
-          'comparador' | 'cotizador_prestamo' | 'disponibilidad_en_tienda' | 'disponibilidad_de_envio' | 'disponibilidad_de_inventario'
+          | "comparador"
+          | "cotizador_prestamo"
+          | "disponibilidad_en_tienda"
+          | "disponibilidad_de_envio"
+          | "disponibilidad_de_inventario"
         >[];
       };
-    },
+    };
     [Events.select_item]: {
-      event: SchemaField<Events.select_item>;
+      event: SchemaField<string>;
       page_type: SchemaField<string>;
       ecommerce: {
         items: Omit<
           ItemsProduct,
-          'comparador' | 'cotizador_prestamo' | 'disponibilidad_en_tienda' | 'disponibilidad_de_envio' | 'disponibilidad_de_inventario'
+          | "comparador"
+          | "cotizador_prestamo"
+          | "disponibilidad_en_tienda"
+          | "disponibilidad_de_envio"
+          | "disponibilidad_de_inventario"
         >[];
       };
-    },
+    };
     [Events.view_item]: {
-      event: SchemaField<Events.view_item>;
+      event: SchemaField<string>;
       page_type: SchemaField<string>;
       ecommerce: {
         items: Omit<
           ItemsProduct,
-          'cotizador_prestamo' | 'disponibilidad_en_tienda' | 'disponibilidad_de_envio' | 'disponibilidad_de_inventario'
+          | "cotizador_prestamo"
+          | "disponibilidad_en_tienda"
+          | "disponibilidad_de_envio"
+          | "disponibilidad_de_inventario"
         >[];
       };
-    },
-    // [Events.view_search_results]: {
-    //   event: SchemaField<Events.view_search_results>;
-    //   search_term: SchemaField<string>;
-    //   search_msg: SchemaField<string>;
-    //   search_results: SchemaField<string>;
-    //   department: SchemaField<string>;
-    //   category: SchemaField<string>;
-    //   category2: SchemaField<string>;
-    //   category3: SchemaField<string>;
-    //   ecommerce: {
-    //     items: Omit<
-    //       ItemsProduct,
-    //       'comparador' | 'item_list_id' | 'item_list_name' | 'cotizador_prestamo' | 'disponibilidad_en_tienda' | 'disponibilidad_de_envio' | 'disponibilidad_de_inventario'
-    //     >[];
-    //   };
-    // },
+    };
     [Events.add_to_cart]: {
-      event: SchemaField<Events.add_to_cart>;
+      event: SchemaField<string>;
       total_quantity_cart: SchemaField<number>;
       total_price_cart: SchemaField<number>;
       page_type: SchemaField<string>;
       ecommerce: {
         items: ItemsProduct[];
       };
-    },
+    };
     [Events.click_comprar]: {
-      event: SchemaField<Events.click_comprar>;
+      event: SchemaField<string>;
       total_quantity_cart: SchemaField<number>;
       total_price_cart: SchemaField<number>;
       page_type: SchemaField<string>;
       ecommerce: {
         items: Omit<
           ItemsProduct,
-          'comparador' | 'cotizador_prestamo' | 'item_list_id' | 'disponibilidad_en_tienda' | 'disponibilidad_de_envio' | 'disponibilidad_de_inventario'
+          | "comparador"
+          | "cotizador_prestamo"
+          | "item_list_id"
+          | "disponibilidad_en_tienda"
+          | "disponibilidad_de_envio"
+          | "disponibilidad_de_inventario"
+        >[];
+      };
+    };
+    [Events.virtual_page]: {
+      event: SchemaField<string>;
+      page_type: SchemaField<string>;
+    },
+    [Events.view_promotion]: {
+      event: SchemaField<string>;
+      ecommerce: {
+        items: ItemPromotion[];
+      };
+    },
+    [Events.select_promotion]: {
+      event: SchemaField<string>;
+      ecommerce: {
+        items: ItemPromotion[];
+      };
+    },
+    [Events.click_acceso_codigo]: {
+      event: SchemaField<string>;
+      page_type: SchemaField<string>;
+    },
+    [Events.click_acceso_email]: {
+      event: SchemaField<string>;
+      page_type: SchemaField<string>;
+    },
+    [Events.click_inicio_sesion]: {
+      event: SchemaField<string>;
+      page_type: SchemaField<string>;
+    },
+    [Events.click_menu_servicios]: {
+      event: SchemaField<string>;
+      opcion_seleccionada: SchemaField<string>;
+      page_type: SchemaField<string>;
+    },
+    [Events.click_viajes]: {
+      event: SchemaField<string>;
+      page_type: SchemaField<string>;
+    },
+    [Events.click_codigo_postal_header]: {
+      event: SchemaField<string>;
+      value_cp: SchemaField<number>;
+      page_type: SchemaField<string>;
+    },
+    [Events.click_ubica_tienda]: {
+      event: SchemaField<string>;
+      page_type: SchemaField<string>;
+    },
+    [Events.click_prestamo_elektra]: {
+      event: SchemaField<string>;
+      opcion_seleccionada: SchemaField<string>;
+      page_type: SchemaField<string>;
+    },
+    [Events.view_search_results]: {
+      event: SchemaField<string>;
+      search_term: SchemaField<string>;
+      search_msg: SchemaField<string>;
+      search_results: SchemaField<string>;
+      department: SchemaField<string>;
+      category: SchemaField<string>;
+      category2: SchemaField<string>;
+      category3: SchemaField<string>;
+      ecommerce: {
+        items: Omit<
+          ItemsProduct,
+          'comparador' | 'item_list_id' | 'item_list_name' | 'cotizador_prestamo' | 'disponibilidad_en_tienda' | 'disponibilidad_de_envio' | 'disponibilidad_de_inventario'
+        >[];
+      };
+    },    
+    [Events.remove_from_cart]: {
+      event: SchemaField<string>;
+      total_quantity_cart: SchemaField<number>;
+      total_price_cart: SchemaField<number>;
+      page_type: SchemaField<string>;
+      ecommerce: {
+        items: Omit<
+          ItemsProduct,
+          'cotizador_prestamo' | 'item_list_id' | 'disponibilidad_en_tienda' | 'disponibilidad_de_envio' | 'disponibilidad_de_inventario'
         >[];
       };
     },
-    // [Events.remove_from_cart]: {
-    //   event: SchemaField<Events.remove_from_cart>;
-    //   total_quantity_cart: SchemaField<number>;
-    //   total_price_cart: SchemaField<number>;
-    //   page_type: SchemaField<string>;
-    //   ecommerce: {
-    //     items: Omit<
-    //       ItemsProduct,
-    //       'cotizador_prestamo' | 'item_list_id' | 'disponibilidad_en_tienda' | 'disponibilidad_de_envio' | 'disponibilidad_de_inventario'
-    //     >[];
-    //   };
-    // },
-    // [Events.click_ordenar]: {
-    //   event: SchemaField<Events.click_ordenar>;
-    //   opcion_seleccionada: SchemaField<string>;
-    //   page_type: SchemaField<string>;
-    // },
-    // [Events.click_ver_mas]: {
-    //   event: SchemaField<Events.click_ver_mas>;
-    //   breadcrumb: SchemaField<string>;
-    //   breadcrumb_lv1: SchemaField<string>;
-    //   breadcrumb_lv2: SchemaField<string>;
-    //   breadcrumb_lv3: SchemaField<string>;
-    //   breadcrumb_lv4: SchemaField<string>;
-    // },
-    // [Events.click_breadcrumb]: {
-    //   event: SchemaField<Events.click_breadcrumb>;
-    //   breadcrumb: SchemaField<string>;
-    //   breadcrumb_lv1: SchemaField<string>;
-    //   breadcrumb_lv2: SchemaField<string>;
-    //   breadcrumb_lv3: SchemaField<string>;
-    //   breadcrumb_lv4: SchemaField<string>;
-    // },
-    // [Events.click_logo]: {
-    //   event: SchemaField<Events.click_logo>;
-    //   page_type: SchemaField<string>;
-    // },
-    // [Events.click_menu_element]: {
-    //   event: SchemaField<Events.click_menu_element>;
-    //   section: SchemaField<string>;
-    //   opcion: SchemaField<string>;
-    //   page_type: SchemaField<string>;
-    // },
-    // [Events.comparador_motos]: {
-    //   event: SchemaField<'comparador_motos'>;
-    //   step: SchemaField<'inicio_comparador' | 'agregar_moto' | 'borrar_moto' | 'borrar_todos' | 'ver_detalle'>;
-    //   filters: { [key: string]: string[] };
-    //   ecommerce: {
-    //     items: Omit<
-    //       ItemsProduct,
-    //       'comparador' | 'cotizador_prestamo' | 'item_list_id' | 'disponibilidad_en_tienda' | 'disponibilidad_de_envio' | 'disponibilidad_de_inventario'
-    //     >[];
-    //   };
-    // },
+    [Events.click_ordenar]: {
+      event: SchemaField<string>;
+      opcion_seleccionada: SchemaField<string>;
+      page_type: SchemaField<string>;
+    },
+    [Events.click_ver_mas]: {
+      event: SchemaField<string>;
+      breadcrumb: SchemaField<string>;
+      breadcrumb_lv1: SchemaField<string>;
+      breadcrumb_lv2: SchemaField<string>;
+      breadcrumb_lv3: SchemaField<string>;
+      breadcrumb_lv4: SchemaField<string>;
+    },
+    [Events.click_breadcrumb]: {
+      event: SchemaField<string>;
+      breadcrumb: SchemaField<string>;
+      breadcrumb_lv1: SchemaField<string>;
+      breadcrumb_lv2: SchemaField<string>;
+      breadcrumb_lv3: SchemaField<string>;
+      breadcrumb_lv4: SchemaField<string>;
+    },
+    [Events.click_logo]: {
+      event: SchemaField<string>;
+      page_type: SchemaField<string>;
+    },
+    [Events.click_menu_element]: {
+      event: SchemaField<string>;
+      section: SchemaField<string>;
+      opcion: SchemaField<string>;
+      page_type: SchemaField<string>;
+    },
     // ! CUIDADO
     [Events.begin_checkout]: {
-      event: 'string';
+      event: "string";
     };
     [Events.click_codigo_postal]: {
-      event: 'string';
+      event: "string";
     };
     [Events.purchase]: {
-      event: 'string';
+      event: "string";
     };
     [Events.add_email_info]: {
-      event: 'string';
+      event: "string";
     };
     [Events.add_payment_info]: {
-      event: 'string';
+      event: "string";
     };
     [Events.add_shipping_info]: {
-      event: 'string';
+      event: "string";
     };
   };
 
@@ -268,20 +272,18 @@ export namespace IEventEnhanced {
     item_category: SchemaField<string>;
     item_category2: SchemaField<string>;
     item_category3: SchemaField<string>;
-    item_category4: SchemaField<string>;
     item_list_id: SchemaField<string>;
     item_list_name: SchemaField<string>;
     item_variant: SchemaField<string>;
-    item_condition: SchemaField<string>;
-    availability: SchemaField<boolean>;
-    image_url: SchemaField<string>;
-    item_list_position: SchemaField<number>;
-    url: SchemaField<string>;
+    quantity: SchemaField<number>;
+    index: SchemaField<number>;
     currency: SchemaField<string>;
-    item_referral: SchemaField<string>;
     disponibilidad_en_tienda: SchemaField<boolean>;
     disponibilidad_de_envio: SchemaField<boolean>;
     disponibilidad_de_inventario: SchemaField<boolean>;
+    semanalidad: SchemaField<number>;
+    vendor: SchemaField<string>;
+    modelo: SchemaField<string>;
   }
 
   export interface ItemPromotion {
